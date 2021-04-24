@@ -8,6 +8,43 @@
 <main id="main">
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 
+    <h1 id="title">The Cat Survey</h1>
+    <p id="description">Let us know about the most important cats in your life.</p>
+
+    <form id="survey-form">
+        <label for="name" id="name-label">Name</label><br>
+        <input id="name" type="text" placeholder="Your name" required><br>
+
+        <label for="email" id="email-label">Email</label><br>
+        <input id="email" type="email" placeholder="Your email" required><br>
+
+        <label for="number" id=number-label>Number of cats you have</label><br>
+        <input id="number" type="number" min=0 max=100 placeholder="Number of cat"><br>
+
+        <label for="dropdown" id="dropdown-label">What types of cats do you have?</label><br>
+        <select id="dropdown">
+            <option value="indoor">Indoor</option>
+            <option value="outdoor">Outdoor</option>
+            <option value="both">Indoor/Outdoor</option>
+        </select>
+
+        <p>How much do you love your cat?</p>
+        <input type="radio" id="verymuch" name="love" value="verymuch">
+        <label for="verymuch">Very much</label>
+        <input type="radio" id="alot" name="love" value="alot">
+        <label for="alot">A lot</label>
+
+        <p>Why do you love them so much?</p>
+        <input type="checkbox" id="cute" name="love" value="cute">
+        <label for="cute">They're cute!</label>
+        <input type="checkbox" id="smart" name="love" value="smart">
+        <label for="smart">They're smart!</label>
+
+        <label for="more" id="more-label">Tell us more about your cats</p>
+        <textarea id="more"></textarea>
+
+        <button type="submit" id="submit">Submit</button>
+    </form>
 </main>
 
 </html>
