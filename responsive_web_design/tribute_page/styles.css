@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+body {
+  background-color: rgb(243, 243, 243);
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  margin: 15px auto;
+}
+
+figcaption {
+  text-align: center;
+}
+
+#title {
+  text-align: center;
+}
