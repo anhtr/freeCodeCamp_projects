@@ -1,0 +1,57 @@
+---
+title: "Inventory Update"
+output: html
+---
+
+Inventory Update
+
+Compare and update the inventory stored in a 2D array against a second 2D array of a fresh delivery. Update the current existing inventory item quantities (in arr1). If an item cannot be found, add the new item and quantity into the inventory array. The returned inventory array should be in alphabetical order by item.
+
+- Base R:
+```{r}
+updateInventory <- function(x, y) {
+  # go through items in new inventory
+  for (i in seq_along(y$item)) {
+    # if item exist in current inventory
+    if (y$item[i] %in% x$item) {
+      # add the amount of new to current inventory
+      x$amount[x$item == y$item[i]] <- x$amount[x$item == y$item[i]] + y$amount[i]
+    } else {
+      # otherwise add the new item and amount as the last row
+      x <- rbind(x, y[i,])
+    }
+  }
+  
+  # order the data frame alphabetically
+  x <- x[order(x$item),]
+  
+  return(x)
+}
+
+curInv <- data.frame(item = 
+                       c("Bowling Ball", 
+                       "Dirty Sock", 
+                       "Hair Pin", 
+                       "Microphone"),
+                     amount =
+                       c(21, 2, 1, 5)
+                     )
+
+newInv <- data.frame(item = 
+                       c("Hair Pin", 
+                       "Half-Eaten Apple", 
+                       "Bowling Ball", 
+                       "Toothpaste"),
+                     amount =
+                       c(2, 3, 67, 7)
+                     )
+
+updateInventory(curInv, newInv)
+#                item amount
+# 1      Bowling Ball     88
+# 2        Dirty Sock      2
+# 3          Hair Pin      3
+# 21 Half-Eaten Apple      3
+# 4        Microphone      5
+# 41       Toothpaste      7
+```
